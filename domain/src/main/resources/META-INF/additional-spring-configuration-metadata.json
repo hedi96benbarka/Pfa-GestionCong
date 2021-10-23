@@ -1,0 +1,7 @@
+{"properties": [
+  {
+    "name": "tn.iit.emailValidation",
+    "type": "java.lang.String",
+    "description": "The link to validte the user account"
+  }
+]}

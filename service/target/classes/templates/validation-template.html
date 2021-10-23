@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      font-family: "Roboto", sans-serif;
+      background: #f1f5f8;
+    }
+
+    .app {
+      min-width: 400px;
+      max-width: 500px;
+      text-align: center;
+      margin: 0 auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background: white;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 12%), 0 2px 4px 0 rgb(0 0 0 / 8%);
+      padding: 26px;
+    }
+
+    .btn {
+      text-transform: uppercase;
+      display: block;
+      background: #2f77e3;
+      text-decoration: none;
+      color: white;
+      padding: 3% 0;
+      width: 100%;
+      outline: none;
+    }
+
+    .link {
+      text-decoration: none;
+      font-family: 'Roboto';
+      color: #6366c3;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app">
+    <div>
+      <div>
+        <div>
+          <div>
+            <img src="https://i.ibb.co/rdshm4s/logo.png" alt="logo" style="width: 30%">
+          </div>
+          <h1 style="text-transform: uppercase; padding: 30px; color:#565252">
+            Confirmation De Compte
+          </h1>
+        </div>
+
+        <div style="text-align: left; margin-bottom: 6%;">
+        <p th:text="${'Bonjour,'+fname+' '+lname}"></p>
+        <p>
+           Votre compte a été créé avec succès pour
+           pouvoir utiliser votre compte. Vous devez confirmer via le lien
+           ci-dessous, puis saisir votre nouveau mot de passe.
+        </p>
+          <div style="text-align: center">
+            <a th:href="@{${validationLink+'/'+token}}" class="btn">Confirmer</a>
+          </div>
+        </div>
+        <div>
+          <div style="display: block;margin-top: 48px;">
+           <p th:text="${'Ce lien ne sera pas valide aprés '+expirationDate}"></p>
+            <hr>
+            <a class="link" href="https://iit.tn">https://iit.tn</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
